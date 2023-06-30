@@ -27,4 +27,4 @@ var n = 3;
 merge(nums1, m, nums2, n);
 
 console.log("After merging:");
-console.log("nums1 =", nums1);
+console.log("nums1 =", nums1); 
