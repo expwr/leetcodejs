@@ -1,28 +1,22 @@
 var majorityElement = function(nums) {
+    const frequencyMap = {}
+    let firstElement = nums[0];
+    let maxCount = 1;
 
-var xj = 1
-var x = 0
-
-for (let i = 0; i < nums.length; i++) {
-    for (var m=i; m < nums.length; m++) {
-        if (nums[i] == nums[m])
-        x++;
-        if (xj < x) {
-            xj = x;
-            ans = nums[i];
+    for (let i = 0; i < nums.length; i++) {
+        const curr = nums[i];
+        if (frequencyMap[curr]) {
+            frequencyMap[curr]++;
+        } else {
+            frequencyMap[curr] = 1
+        }
+        if (frequencyMap[curr] > maxCount) {
+            firstElement = curr;
+            maxCount = frequencyMap[curr]
         }
     }
-    x = 0;
-console.log(ans)
-}  
-    
-
+    return firstElement
 };
 
-const nums = [2,3,4,3,2,3,4,4,4,4,1,2]
-
-majorityElement()
-
-
-
-
+const nums = [5, 4, 3, 2, 3, 4, 5, 6, 6, 9, 8, 8, 8, 8]
+console.log(nums)
