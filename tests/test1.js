@@ -1,3 +1,4 @@
+// reverses a string
 var reverseString = function(string) {
     const words = string.split(' ');
 

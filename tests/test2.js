@@ -1,3 +1,4 @@
+// finds the highest value in the array between two integers
 const maxSubarraySum = (arr) => {
     let currentSum = arr[0];
     let maxSum = arr[0];
