@@ -1,10 +1,16 @@
-var plusOne = function(digits) {
-    for (let i = 0; i < digits.length; i++) {
-        var lastItem = digits[digits.length - 1];
-        lastItem++
-        console.log(lastItem)
+const plusOne = function(digits) {
+    for (let i = digits.length - 1; i >= 0; i--) {
+        if (digits[i] < 9) {
+            digits[i] = digits[i] + 1;
+            return digits
+        } else {
+            digits[i] = 0;
+        }
     }
-};
 
-const digits = [2, 4, 6]
-plusOne(digits)
+    digits.unshift(1);
+    return digits;
+}
+
+const digits = [2, 4, 9]
+console.log(plusOne(digits))
